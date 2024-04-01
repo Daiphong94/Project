@@ -61,19 +61,19 @@ namespace Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AnswerID"), 1L, 1);
 
-                    b.Property<bool>("IsCorrect")
-                        .HasColumnType("bit");
+                    b.Property<string>("File")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<int>("QuestionID")
                         .HasColumnType("int");
 
-                    b.Property<string>("SelectedOption")
-                        .IsRequired()
-                        .HasMaxLength(1)
-                        .HasColumnType("nvarchar(1)");
-
                     b.Property<int>("StudentID")
                         .HasColumnType("int");
+
+                    b.Property<string>("Writing")
+                        .HasColumnType("text");
 
                     b.HasKey("AnswerID");
 
@@ -248,34 +248,12 @@ namespace Data.Migrations
                     b.Property<int>("CompetitionID")
                         .HasColumnType("int");
 
-                    b.Property<string>("Content")
-                        .IsRequired()
+                    b.Property<string>("File")
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("Writing")
                         .HasColumnType("text");
-
-                    b.Property<string>("CorrectOption")
-                        .IsRequired()
-                        .HasMaxLength(1)
-                        .HasColumnType("nvarchar(1)");
-
-                    b.Property<string>("OptionA")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("OptionB")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("OptionC")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("OptionD")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("QuestionID");
 

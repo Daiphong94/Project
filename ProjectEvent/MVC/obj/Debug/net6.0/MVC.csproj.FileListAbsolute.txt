@@ -277,3 +277,4 @@ C:\Users\Admin\Project\ProjectEvent\MVC\bin\Debug\net6.0\runtimes\unix\lib\net6.
 C:\Users\Admin\Project\ProjectEvent\MVC\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\Admin\Project\ProjectEvent\MVC\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Admin\Project\ProjectEvent\MVC\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\Admin\Project\ProjectEvent\MVC\obj\Debug\net6.0\MVC.sourcelink.json

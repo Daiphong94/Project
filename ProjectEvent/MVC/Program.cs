@@ -19,7 +19,10 @@ builder.Services.AddScoped<SurveyInterface, SurveyRepository>();
 builder.Services.AddScoped<ResponseInterface, ResponseRepository>();
 builder.Services.AddScoped<FAQInterface, FAQRepository>();
 builder.Services.AddScoped<EventInterface, EventRepository>();
-
+builder.Services.AddScoped<AnswerInterface, AnswerRepository>();
+builder.Services.AddScoped<CompetitionInterface, CompetitionRepository>();
+builder.Services.AddScoped<QuestionInterface, QuestionRepository>();
+builder.Services.AddScoped<ExamInterface, ExamRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

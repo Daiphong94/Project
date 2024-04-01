@@ -138,19 +138,16 @@ namespace Data.Data
             modelBuilder.Entity<Question>(entity =>
             {
                 entity.HasKey(e => e.QuestionID);
-                entity.Property(e => e.Content).IsRequired().HasColumnType("text");
-                entity.Property(e => e.OptionA).IsRequired().HasMaxLength(100);
-                entity.Property(e => e.OptionB).IsRequired().HasMaxLength(100);
-                entity.Property(e => e.OptionC).IsRequired().HasMaxLength(100);
-                entity.Property(e => e.OptionD).IsRequired().HasMaxLength(100);
-                entity.Property(e => e.CorrectOption).IsRequired().HasMaxLength(1);
+                entity.Property(e => e.File).IsRequired(false).HasMaxLength(200);
+                entity.Property(e => e.Writing).IsRequired(false).HasColumnType("text");
+                
             });
 
             modelBuilder.Entity<Answer>(entity =>
             {
                 entity.HasKey(e => e.AnswerID);
-                entity.Property(e => e.SelectedOption).IsRequired().HasMaxLength(1);
-                entity.Property(e => e.IsCorrect).IsRequired();
+                entity.Property(e => e.File).IsRequired().HasMaxLength(200);
+            entity.Property(e => e.Writing).IsRequired(false).HasColumnType("text");
             });
 
             modelBuilder.Entity<Exam>(entity =>
