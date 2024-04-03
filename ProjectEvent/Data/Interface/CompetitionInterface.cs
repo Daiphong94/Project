@@ -14,5 +14,6 @@ namespace Data.Interface
         Task Add(Competition entity);
         Task Update(Competition entity);
         Task Delete(int id);
+        Task<Competition> GetByName(string competitionName);
     }
 }

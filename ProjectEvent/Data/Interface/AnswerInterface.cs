@@ -14,5 +14,6 @@ namespace Data.Interface
         Task Add(Answer entity);
         Task Update(Answer entity);
         Task Delete(int id);
+        Task SubmitAnswer(Answer answer);
     }
 }

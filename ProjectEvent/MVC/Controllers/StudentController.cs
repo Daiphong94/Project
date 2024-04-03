@@ -7,9 +7,11 @@ namespace MVC.Controllers
     public class StudentController : Controller
     {
         private protected StudentInterface _studentInterface;
+        
         public StudentController(StudentInterface studentInterface)
         {
             _studentInterface = studentInterface;
+            
         }
         public async Task<IActionResult> Index()
         {

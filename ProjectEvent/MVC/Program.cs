@@ -23,6 +23,7 @@ builder.Services.AddScoped<AnswerInterface, AnswerRepository>();
 builder.Services.AddScoped<CompetitionInterface, CompetitionRepository>();
 builder.Services.AddScoped<QuestionInterface, QuestionRepository>();
 builder.Services.AddScoped<ExamInterface, ExamRepository>();
+builder.Services.AddScoped<SCInterface, SCRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

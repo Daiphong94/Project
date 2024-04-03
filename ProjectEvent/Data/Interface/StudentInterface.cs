@@ -14,5 +14,7 @@ namespace Data.Interface
         Task AddStudent(Student entity);
         Task UpdateStudent(Student entity);
         Task DeleteStudent(int id);
+        Task<Student> GetByEmail(string email);
+        Task<IEnumerable<Competition>> GetRegisteredCompetitions(int studentId);
     }
 }

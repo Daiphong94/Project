@@ -18,5 +18,11 @@ namespace Data.Data
 
         public virtual ICollection<Answer> Answers { get; set; }
         public virtual ICollection<Exam> Exams { get; set; }
+        public virtual ICollection<StudentCompetition> StudentCompetitions { get; set; }
+
+        public Student()
+        {
+            StudentCompetitions = new HashSet<StudentCompetition>(); 
+        }
     }
 }

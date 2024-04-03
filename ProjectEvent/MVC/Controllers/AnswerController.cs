@@ -19,7 +19,8 @@ namespace MVC.Controllers
         }
         public IActionResult Create()
         {
-            return View();
+            var model = new Answer();
+            return View(model);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]

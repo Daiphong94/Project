@@ -37,9 +37,19 @@ namespace Data.Repository
             return await _context.Students.ToListAsync();
         }
 
+        public async Task<Student> GetByEmail(string email)
+        {
+            return await _context.Students.FirstOrDefaultAsync(s => s.Email == email);
+        }
+
         public async Task<Student> GetByIdStudent(int id)
         {
             return await _context.Students.FindAsync(id);
+        }
+
+        public Task<IEnumerable<Competition>> GetRegisteredCompetitions(int studentId)
+        {
+            throw new NotImplementedException();
         }
 
         public async Task UpdateStudent(Student entity)

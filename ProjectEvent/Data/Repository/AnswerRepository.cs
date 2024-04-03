@@ -43,6 +43,11 @@ namespace Data.Repository
             return await _context.Answers.FindAsync(id);
         }
 
+        public Task SubmitAnswer(Answer answer)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task Update(Answer entity)
         {
             _context.Answers.Update(entity);

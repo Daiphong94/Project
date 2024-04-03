@@ -43,6 +43,11 @@ namespace Data.Repository
             return await _context.Competitions.FindAsync(id);
         }
 
+        public async Task<Competition> GetByName(string competitionName)
+        {
+            return await _context.Competitions.FirstOrDefaultAsync(c => c.CompetitionName == competitionName);
+        }
+
         public async Task Update(Competition entity)
         {
             _context.Competitions.Update(entity);

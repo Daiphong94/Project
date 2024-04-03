@@ -22,11 +22,22 @@ namespace Data.Data
         public DbSet<Question> Questions { get; set; }
         public DbSet<Answer> Answers { get; set; }
         public DbSet<Exam> Exams { get; set; }
+        public DbSet<StudentCompetition> StudentCompetitions { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
-            
+           
+            modelBuilder.Entity<StudentCompetition>()
+                .HasOne(sc => sc.Competition)
+                .WithMany(c => c.StudentCompetitions)
+                .HasForeignKey(sc => sc.CompetitionID)
+                .OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<StudentCompetition>()
+                .HasOne(sc => sc.Student)
+                .WithMany(s => s.StudentCompetitions)
+                .HasForeignKey(sc => sc.StudentID)
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Question>()
                 .HasOne(q => q.Competition)
@@ -59,7 +70,12 @@ namespace Data.Data
                 .WithMany(s => s.Answers)
                 .HasForeignKey(a => a.StudentID)
                 .OnDelete(DeleteBehavior.Cascade);
-
+            modelBuilder.Entity<StudentCompetition>(entity =>
+            {
+                entity.HasKey(sc => new { sc.StudentID, sc.CompetitionID });
+                entity.Property(e => e.JoinedDate).IsRequired().HasColumnType("datetime");
+                entity.Property(e => e.CompletedDate).IsRequired(false).HasColumnType("datetime");
+            });
             modelBuilder.Entity<Student>(entity =>
             {
                 entity.HasKey(e => e.StudentID);
